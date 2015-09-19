@@ -11,8 +11,6 @@ import urllib2
 import random
 import copy
 
-#callback url https://api.imgur.com/3/gallery.json
-
 #settings:
 cid = "5976c17ac696c9b" #client id
 sound = True #beep if error
@@ -24,15 +22,12 @@ wipe = True #for location
 ltime = time.time() #last time
 btime = 1.0 #min time between consecutive
 
-###
 def redirect(ourl, nurl): #tinyurl api
 	turl = "http://tinyurl.com/create.php?&url="+ourl+"&alias="+nurl
 	urllib2.urlopen(turl) #visit site
-	#result is http://tinyurl.com/nurl
 
 def randstring(len = 12):
 	return str(random.randint(0,10**len-1))
-###
 
 def uploadimg(path, id = cid, title = ''):
 	im = pyimgur.Imgur(id)
