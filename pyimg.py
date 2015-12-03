@@ -97,7 +97,7 @@ def OnKeyboardEvent(event):
 		if time.time()-ltime < btime:
 			return True
 		argl = [None]*4
-		if len(lasttwo) == 2 and time.time()-lasttwo[-1][1] < ptimeout: #no hardcode
+		if len(lasttwo) == 2 and time.time()-lasttwo[-1][1] < ptimeout: 
 			argl = copy.deepcopy((lasttwo[0][0][0], lasttwo[0][0][1], lasttwo[1][0][0], lasttwo[1][0][1]))
 			if wipe:
 				lasttwo = []
